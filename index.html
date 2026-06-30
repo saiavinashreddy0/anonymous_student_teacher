@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>QR Anonymous Doubt System – DTI Project</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="loader">
+  <div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,#38bdf8,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">QR Doubt System</div>
+  <div class="loader-bar"><div class="loader-fill" id="lf"></div></div>
+  <div class="loader-text" id="lt">Loading...</div>
+</div>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<canvas id="particles-canvas"></canvas>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+<div id="toast"></div>
+
+<nav>
+  <a href="#" class="nav-brand"><div class="nav-icon">QR</div>Anonymous Doubt System</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#problem" class="nav-lnk">Problem</a></li>
+    <li><a href="#process" class="nav-lnk">Process</a></li>
+    <li><a href="#solution" class="nav-lnk">Solution</a></li>
+    <li><a href="#demo" class="nav-lnk">Live Demo</a></li>
+    <li><a href="#team" class="nav-lnk">Team</a></li>
+  </ul>
+  <div class="nav-pill">DTI · AIML · VVIT</div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#problem" class="mm-lnk">Problem</a>
+  <a href="#process" class="mm-lnk">Design Process</a>
+  <a href="#solution" class="mm-lnk">Solution</a>
+  <a href="#demo" class="mm-lnk">Live Demo</a>
+  <a href="#results" class="mm-lnk">Results</a>
+  <a href="#team" class="mm-lnk">Team</a>
+</div>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-badge"><div class="hero-dot"></div>Design Thinking &amp; Innovation · AIML · VVIT Nambur · JNTUK</div>
+  <h1 class="hero-title">Silence Isn't<br><span class="grad">Understanding</span></h1>
+  <p class="hero-sub">A QR-based anonymous doubt submission system that removes the fear of judgement — letting every student ask freely, every teacher understand clearly.</p>
+  <div class="hero-ctas">
+    <a href="#demo" class="btn-p">Try Live Demo</a>
+    <a href="#process" class="btn-g">Explore Process</a>
+  </div>
+  <div class="stats-row">
+    <div class="stat-box"><div class="stat-num counter" data-target="4" data-suffix="×">0</div><div class="stat-lbl">More Questions</div></div>
+    <div class="stat-box"><div class="stat-num counter" data-target="81" data-suffix="%">0</div><div class="stat-lbl">Want Anonymity</div></div>
+    <div class="stat-box"><div class="stat-num counter" data-target="72" data-suffix="%">0</div><div class="stat-lbl">Hesitate to Ask</div></div>
+    <div class="stat-box"><div class="stat-num counter" data-target="300" data-suffix="%">0</div><div class="stat-lbl">Participation Up</div></div>
+  </div>
+  <div class="scroll-ind"><div class="scroll-arrow"></div>Scroll</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROBLEM -->
+<section class="page-section" id="problem">
+  <div class="reveal">
+    <div class="sec-tag">Chapter 1 · Problem Statement</div>
+    <h2 class="sec-h">Why Students Stay<br>Silent in Class</h2>
+    <p class="sec-sub">Classrooms are meant for interaction — but psychological barriers stop most students from ever speaking up.</p>
+  </div>
+  <div class="prob-grid">
+    <div class="prob-card reveal"><div class="prob-icon-box p1">😰</div><h3>Fear of Judgement</h3><p>Students fear sounding "dumb" in front of peers. Social pressure prevents open expression of doubts, even when understanding is critically needed.</p></div>
+    <div class="prob-card reveal"><div class="prob-icon-box p2">🤐</div><h3>Silence Misread as Understanding</h3><p>Teachers interpret classroom silence as comprehension. In reality, silence hides deep confusion and unresolved learning gaps that compound over time.</p></div>
+    <div class="prob-card reveal"><div class="prob-icon-box p3">🧠</div><h3>Psychological Barriers</h3><p>Social anxiety, peer comparison, and fear of negative evaluation are deeply embedded emotional barriers — not technical ones.</p></div>
+    <div class="prob-card reveal"><div class="prob-icon-box p4">📉</div><h3>Compounding Learning Gaps</h3><p>Unaddressed doubts accumulate, leading to poor performance, reduced confidence, and long-term academic setbacks.</p></div>
+  </div>
+  <div class="quote-box reveal">
+    <p>"When a teacher asks 'Does anyone have doubts?', the classroom often remains silent — not because students understand, but because they're afraid to admit they don't."</p>
+    <cite>— Classroom Observation, Empathy Phase 2025–26</cite>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FINDINGS -->
+<section class="page-section" id="findings">
+  <div class="reveal">
+    <div class="sec-tag">Chapter 3 · Empathy Phase</div>
+    <h2 class="sec-h">What the Research Revealed</h2>
+    <p class="sec-sub">Surveys, teacher interviews, classroom observations, and empathy mapping produced these critical findings.</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card reveal"><div class="big-num counter" data-target="72" data-suffix="%">0</div><p>of students hesitate to ask doubts in class</p></div>
+    <div class="stat-card reveal"><div class="big-num counter" data-target="81" data-suffix="%">0</div><p>prefer anonymity while asking questions</p></div>
+    <div class="stat-card reveal"><div class="big-num counter" data-target="60" data-suffix="%">0</div><p>don't want peers to know they asked a doubt</p></div>
+    <div class="stat-card reveal"><div class="big-num counter" data-target="55" data-suffix="%">0</div><p>believe teachers assume understanding too quickly</p></div>
+  </div>
+  <div style="margin-top:60px" class="reveal">
+    <div class="sec-tag">User Personas</div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--head);margin-bottom:0">Who We Designed For</h3>
+    <div class="persona-tabs">
+      <button class="ptab active" onclick="showPersona('p1',this)">😶 Introverted Student</button>
+      <button class="ptab" onclick="showPersona('p2',this)">🤔 Average Student</button>
+      <button class="ptab" onclick="showPersona('p3',this)">👩‍🏫 Teacher</button>
+    </div>
+    <div id="p1" class="persona-content active">
+      <div class="persona-header"><div class="persona-av" style="background:linear-gradient(135deg,#38bdf8,#818cf8)">IS</div><div><div class="persona-name">The Introverted Student</div><div class="persona-role">Hesitates to speak publicly, needs privacy</div></div></div>
+      <div class="persona-tags"><span class="ptag red">Fear of judgement</span><span class="ptag red">Social anxiety</span><span class="ptag green">Needs anonymity</span><span class="ptag blue">Wants to learn</span></div>
+      <p>Hesitates to speak in public settings. Fears embarrassment and being labelled "slow". Has many genuine doubts but chooses silence to protect self-image. Needs a completely safe, private channel to ask anything without any social risk.</p>
+    </div>
+    <div id="p2" class="persona-content">
+      <div class="persona-header"><div class="persona-av" style="background:linear-gradient(135deg,#818cf8,#34d399)">AS</div><div><div class="persona-name">The Average Student</div><div class="persona-role">Partially understands, avoids appearing weak</div></div></div>
+      <div class="persona-tags"><span class="ptag red">Social comparison pressure</span><span class="ptag green">Wants clarification</span><span class="ptag blue">Upvotes others' doubts</span></div>
+      <p>Understands most concepts but needs occasional clarification. Avoids asking questions to not appear less capable than peers. Benefits enormously from upvoting — gets answers without ever asking directly.</p>
+    </div>
+    <div id="p3" class="persona-content">
+      <div class="persona-header"><div class="persona-av" style="background:linear-gradient(135deg,#fb923c,#f43f5e)">T</div><div><div class="persona-name">The Teacher</div><div class="persona-role">Needs real-time visibility of confusion</div></div></div>
+      <div class="persona-tags"><span class="ptag red">Misreads silence</span><span class="ptag green">Wants student feedback</span><span class="ptag blue">Improves teaching</span></div>
+      <p>Wants students to participate actively but misinterprets silence as understanding. With the QR system, teachers gain live visibility into confusion, identify common misconceptions, and make every lecture more targeted and effective.</p>
+    </div>
+  </div>
+  <div class="progress-section reveal" style="margin-top:60px">
+    <div class="sec-tag">Key Barriers Identified</div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--head);margin-bottom:24px">Primary Reasons Students Don't Ask</h3>
+    <div class="prog-item"><div class="prog-label"><span>Fear of being judged by peers</span><span id="p-pct-1">0%</span></div><div class="prog-bar"><div class="prog-fill" id="pf1" style="background:linear-gradient(90deg,#38bdf8,#818cf8)" data-width="82"></div></div></div>
+    <div class="prog-item"><div class="prog-label"><span>Not wanting to interrupt class flow</span><span id="p-pct-2">0%</span></div><div class="prog-bar"><div class="prog-fill" id="pf2" style="background:linear-gradient(90deg,#818cf8,#34d399)" data-width="74"></div></div></div>
+    <div class="prog-item"><div class="prog-label"><span>Social comparison with smarter peers</span><span id="p-pct-3">0%</span></div><div class="prog-bar"><div class="prog-fill" id="pf3" style="background:linear-gradient(90deg,#34d399,#fb923c)" data-width="67"></div></div></div>
+    <div class="prog-item"><div class="prog-label"><span>No comfortable channel available</span><span id="p-pct-4">0%</span></div><div class="prog-bar"><div class="prog-fill" id="pf4" style="background:linear-gradient(90deg,#fb923c,#f87171)" data-width="59"></div></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROCESS -->
+<section class="page-section" id="process">
+  <div class="reveal">
+    <div class="sec-tag">Chapters 3–9 · Design Thinking Methodology</div>
+    <h2 class="sec-h">Six Phases of Human-Centred<br>Problem Solving</h2>
+    <p class="sec-sub">Click each phase to explore what was discovered, built, and learned.</p>
+  </div>
+  <div class="reveal">
+    <div class="phase-nav">
+      <button class="phase-btn active" onclick="showPhase(0,this)"><div class="ph-icon">🫂</div>Empathize</button>
+      <button class="phase-btn" onclick="showPhase(1,this)"><div class="ph-icon">🎯</div>Define</button>
+      <button class="phase-btn" onclick="showPhase(2,this)"><div class="ph-icon">💡</div>Ideate</button>
+      <button class="phase-btn" onclick="showPhase(3,this)"><div class="ph-icon">🔧</div>Prototype</button>
+      <button class="phase-btn" onclick="showPhase(4,this)"><div class="ph-icon">🧪</div>Test</button>
+      <button class="phase-btn" onclick="showPhase(5,this)"><div class="ph-icon">🚀</div>Implement</button>
+    </div>
+    <div id="ph0" class="phase-panel active"><div class="phase-meta">Phase 01 · Empathize</div><h3>Understanding Users at the Deepest Level</h3><p>The empathy phase is the foundation of Design Thinking. Instead of assuming what the problem is, the team collected real-world data by directly interacting with users — students and teachers. Multiple tools were used to uncover hidden emotional and behavioural patterns.</p><div class="phase-points"><div class="pp"><div class="pp-dot" style="background:var(--accent)"></div>Student surveys distributed — 72% hesitate to ask doubts</div><div class="pp"><div class="pp-dot" style="background:var(--accent2)"></div>Teacher interviews revealed silence misread as understanding</div><div class="pp"><div class="pp-dot" style="background:var(--accent3)"></div>Classroom observations: only confident students dominate</div><div class="pp"><div class="pp-dot" style="background:var(--accent4)"></div>Empathy mapping: fear, anxiety, social pressure identified</div></div></div>
+    <div id="ph1" class="phase-panel"><div class="phase-meta">Phase 02 · Define</div><h3>Crystallising the Real Problem</h3><p>Raw empathy data was synthesised into a precise, actionable problem statement. This phase transformed observations into clearly defined user needs, POV statements, and "How Might We?" questions that guided ideation.</p><div class="phase-points"><div class="pp"><div class="pp-dot" style="background:var(--accent)"></div>Root cause: lack of psychological safety, not technical failure</div><div class="pp"><div class="pp-dot" style="background:var(--accent2)"></div>POV statements created for 3 key personas</div><div class="pp"><div class="pp-dot" style="background:var(--accent3)"></div>6 "How Might We?" questions generated for ideation</div><div class="pp"><div class="pp-dot" style="background:var(--accent4)"></div>Functional, non-functional &amp; UX requirements defined</div></div></div>
+    <div id="ph2" class="phase-panel"><div class="phase-meta">Phase 03 · Ideate</div><h3>Generating &amp; Filtering 30+ Ideas</h3><p>Individual brainwriting, SCAMPER technique, and mind mapping were used to generate over 30 ideas. Divergent thinking first, then convergent — evaluated against feasibility, simplicity, adoption, and cost.</p><div class="phase-points"><div class="pp"><div class="pp-dot" style="background:var(--accent)"></div>30+ ideas generated via SCAMPER + brainwriting</div><div class="pp"><div class="pp-dot" style="background:var(--accent2)"></div>Idea matrix scored: QR System 9/10, App 6/10, LMS 5/10</div><div class="pp"><div class="pp-dot" style="background:var(--accent3)"></div>SCAMPER applied: Substitute verbal → digital anonymous</div><div class="pp"><div class="pp-dot" style="background:var(--accent4)"></div>Final selection: QR + anonymous form + teacher dashboard</div></div></div>
+    <div id="ph3" class="phase-panel"><div class="phase-meta">Phase 04 · Prototype</div><h3>From Paper Sketches to Functional System</h3><p>Three levels of prototyping: paper-based (low-fidelity), Wizard of Oz (simulated), and functional (Google Forms + QR). Each level informed the next. Users tested and gave real feedback at every stage.</p><div class="phase-points"><div class="pp"><div class="pp-dot" style="background:var(--accent)"></div>Paper prototype: students simulated doubt submission</div><div class="pp"><div class="pp-dot" style="background:var(--accent2)"></div>Wizard of Oz: 300% more questions than verbal method</div><div class="pp"><div class="pp-dot" style="background:var(--accent3)"></div>Functional: Google Forms + QR + Sheets dashboard</div><div class="pp"><div class="pp-dot" style="background:var(--accent4)"></div>Key learning: simplicity drives adoption</div></div></div>
+    <div id="ph4" class="phase-panel"><div class="phase-meta">Phase 05 · Test</div><h3>Validating in Real Classroom Scenarios</h3><p>Three test scenarios: during lecture, after lecture, and teacher analytics view. Usability testing, post-usage surveys, and observation testing were conducted. Results were overwhelmingly positive.</p><div class="phase-points"><div class="pp"><div class="pp-dot" style="background:var(--accent)"></div>Scenario A (during lecture): 4× increase in questions</div><div class="pp"><div class="pp-dot" style="background:var(--accent2)"></div>Scenario B (after lecture): deeper, more conceptual doubts</div><div class="pp"><div class="pp-dot" style="background:var(--accent3)"></div>Scenario C (teacher): identified patterns, adjusted teaching</div><div class="pp"><div class="pp-dot" style="background:var(--accent4)"></div>Student feedback: "I finally asked what I always wanted to"</div></div></div>
+    <div id="ph5" class="phase-panel"><div class="phase-meta">Phase 06 · Implement</div><h3>A 6-Week Deployment Roadmap</h3><p>A structured implementation plan covers awareness creation, QR placement, teacher training, live usage, review, and full integration. Barriers and mitigation strategies are defined for every scenario.</p><div class="phase-points"><div class="pp"><div class="pp-dot" style="background:var(--accent)"></div>Week 1: awareness posters + QR code placement</div><div class="pp"><div class="pp-dot" style="background:var(--accent2)"></div>Weeks 2–3: pilot testing + initial usage</div><div class="pp"><div class="pp-dot" style="background:var(--accent3)"></div>Weeks 4–5: feedback collection + improvements</div><div class="pp"><div class="pp-dot" style="background:var(--accent4)"></div>Week 6: full integration into classroom routine</div></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SOLUTION -->
+<section class="page-section" id="solution">
+  <div class="reveal">
+    <div class="sec-tag">Chapters 5–6 · The Solution</div>
+    <h2 class="sec-h">QR-Based Anonymous<br>Doubt Submission System</h2>
+    <p class="sec-sub">Simple enough to use in 30 seconds, powerful enough to transform classroom interaction.</p>
+  </div>
+  <div class="sol-layout">
+    <div class="steps-list reveal">
+      <div class="step-row" onclick="setStep(this)" id="step-1"><div class="step-n">1</div><div><h4>Teacher Generates QR Code</h4><p>A unique QR code linked to the anonymous form is placed in the classroom or projected on screen before each session.</p></div></div>
+      <div class="step-row" onclick="setStep(this)" id="step-2"><div class="step-n">2</div><div><h4>Student Scans &amp; Submits</h4><p>Students scan with their phone, type their doubt, select a category, and hit submit — completely anonymously.</p></div></div>
+      <div class="step-row" onclick="setStep(this)" id="step-3"><div class="step-n">3</div><div><h4>Real-Time Dashboard</h4><p>All submitted doubts appear instantly in the teacher's view, sorted by category, with pending/answered status.</p></div></div>
+      <div class="step-row" onclick="setStep(this)" id="step-4"><div class="step-n">4</div><div><h4>Upvoting &amp; Prioritization</h4><p>Students upvote existing doubts they share — teachers instantly see what's most common and address it first.</p></div></div>
+      <div class="step-row" onclick="setStep(this)" id="step-5"><div class="step-n">5</div><div><h4>Response &amp; FAQ Generation</h4><p>Teachers respond verbally or digitally. Answered doubts are saved as FAQs for future reference and revision.</p></div></div>
+    </div>
+    <div class="mockup-device reveal">
+      <div class="device-chrome"><div class="d-dot" style="background:#f87171"></div><div class="d-dot" style="background:#fbbf24"></div><div class="d-dot" style="background:#34d399"></div><span class="device-label">Student Mobile Interface</span></div>
+      <div class="phone-frame">
+        <div class="phone-top"><h4>📝 Submit Your Doubt</h4></div>
+        <div class="phone-body">
+          <div class="anon-badge">🔒 Your identity is completely hidden — ask freely!</div>
+          <div class="p-input" id="phone-preview">Type your doubt here...</div>
+          <div class="p-select"><span id="cat-display">📂 Category: Concept Doubt</span><span style="color:var(--muted)">▾</span></div>
+          <div class="p-submit">Submit Anonymously →</div>
+          <div class="p-footer"><span>37 doubts submitted today</span> · <span style="color:var(--accent3)">12 answered</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:64px" class="reveal">
+    <div class="sec-tag">Comparative Analysis</div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--head);margin-bottom:0">How Our System Compares</h3>
+    <div class="table-wrap">
+      <table class="comp-table">
+        <thead><tr><th>System</th><th>Anonymity</th><th>Real-Time</th><th>Easy Access</th><th>Categorized</th><th>Score</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Traditional (Hand-raise)</strong></td><td class="tag-n">✗ None</td><td class="tag-y">✓ Yes</td><td class="tag-y">✓ Yes</td><td class="tag-n">✗ No</td><td style="color:var(--muted)">3/10</td></tr>
+          <tr><td><strong>Google Forms</strong></td><td class="tag-y">✓ Partial</td><td class="tag-n">✗ No</td><td class="tag-y">✓ Yes</td><td class="tag-n">✗ No</td><td style="color:var(--muted)">5/10</td></tr>
+          <tr><td><strong>WhatsApp Groups</strong></td><td class="tag-n">✗ None</td><td class="tag-y">✓ Yes</td><td class="tag-y">✓ Yes</td><td class="tag-n">✗ No</td><td style="color:var(--muted)">4/10</td></tr>
+          <tr><td><strong>LMS Platforms</strong></td><td class="tag-n">✗ None</td><td class="tag-n">✗ No</td><td class="tag-n">✗ Low</td><td class="tag-y">✓ Yes</td><td style="color:var(--muted)">4/10</td></tr>
+          <tr class="win-row"><td><strong style="color:var(--accent)">🏆 Our QR System</strong></td><td class="tag-y">✓ Full</td><td class="tag-y">✓ Yes</td><td class="tag-y">✓ Yes</td><td class="tag-y">✓ Yes</td><td style="color:var(--accent3);font-weight:700;font-size:0.9rem">9/10</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════
+     LIVE DEMO — SESSION-GATED (from v2)
+     Teacher creates session → 5-digit code + QR
+     Student enters code → unlocks doubt form
+     ══════════════════════════════════════════ -->
+<div class="demo-wrap" id="demo">
+  <div class="demo-header reveal">
+    <div class="sec-tag">Interactive Prototype · Session-Gated Live System</div>
+    <h2 class="sec-h">Live System Demo</h2>
+    <p class="sec-sub" style="margin:0 auto">
+      <strong style="color:var(--accent2)">Teacher</strong> creates a session → gets a <strong style="color:var(--accent2)">5-digit code + QR</strong> → shares it →
+      <strong style="color:var(--accent)">Students</strong> scan QR or type the code to unlock the doubt form.
+    </p>
+    <div class="role-toggle">
+      <button class="role-tab t-active" id="rt-teacher" onclick="switchRole('teacher')">👩‍🏫 Teacher View</button>
+      <button class="role-tab" id="rt-student" onclick="switchRole('student')">🎓 Student View</button>
+    </div>
+  </div>
+
+  <div class="demo-grid reveal">
+
+    <!-- ── TEACHER PANEL ── -->
+    <div class="demo-panel" id="teacher-panel">
+      <div class="panel-hdr teacher-hdr">
+        <span class="role-badge rb-teacher">👩‍🏫 Teacher Dashboard</span>
+        <div class="live-dot-wrap"><div class="live-dot" style="background:var(--accent3)"></div><span style="color:var(--accent3)">Live</span></div>
+      </div>
+      <div class="panel-body">
+        <!-- No session -->
+        <div id="t-no-session">
+          <div class="session-create-box">
+            <p>Generate a new session to get your <strong style="color:var(--accent2)">5-digit access code</strong> and <strong style="color:var(--accent2)">QR code</strong>. Share them with students so they can join and submit doubts anonymously.</p>
+            <button class="btn-gen" onclick="teacherCreateSession()">⚡ Generate New Session</button>
+          </div>
+          <div class="no-session-feed">
+            <div class="ni">📋</div>
+            <p>No active session yet.<br>Create one to start receiving student doubts.</p>
+          </div>
+        </div>
+        <!-- Active session -->
+        <div id="t-active-session" style="display:none">
+          <div class="session-active-box">
+            <div class="session-code-display">
+              <div class="session-code-label">📡 Session Code — Share with students</div>
+              <div class="big-code" id="display-code">-----</div>
+              <div class="code-hint">Students enter this code <strong>or</strong> scan the QR below</div>
+            </div>
+            <div class="qr-box">
+              <div class="qr-label">📱 QR Code — Scan to join instantly</div>
+              <div id="qr-canvas-wrap"></div>
+              <div class="qr-sub">Scanning auto-fills the code on student's device</div>
+            </div>
+            <div class="session-meta">
+              <div class="smeta-pill"><div class="smeta-n" id="sm-total">0</div><div class="smeta-l">Total</div></div>
+              <div class="smeta-pill"><div class="smeta-n" id="sm-pending">0</div><div class="smeta-l">Pending</div></div>
+              <div class="smeta-pill"><div class="smeta-n" id="sm-answered">0</div><div class="smeta-l">Answered</div></div>
+              <div class="smeta-pill"><div class="smeta-n" id="sm-students">0</div><div class="smeta-l">Joined</div></div>
+            </div>
+            <div class="t-toolbar">
+              <input class="t-search" id="t-search" type="text" placeholder="🔍 Search doubts..." oninput="renderFeed()"/>
+              <button class="filter-chip on" data-f="all" onclick="setFilter(this)">All</button>
+              <button class="filter-chip" data-f="pending" onclick="setFilter(this)">Pending</button>
+              <button class="filter-chip" data-f="answered" onclick="setFilter(this)">Answered</button>
+            </div>
+            <div class="doubts-feed" id="doubts-feed"></div>
+            <button class="btn-end" onclick="teacherEnd()">🛑 End Session &amp; Clear Data</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STUDENT PANEL ── -->
+    <div class="demo-panel" id="student-panel">
+      <div class="panel-hdr student-hdr">
+        <span class="role-badge rb-student">🎓 Student View</span>
+        <div class="live-dot-wrap"><div class="live-dot" style="background:var(--accent)"></div><span style="color:var(--accent)">Anonymous</span></div>
+      </div>
+      <div class="panel-body">
+        <!-- Gate: shown before joining -->
+        <div id="s-gate" class="student-gate">
+          <div class="gate-header">
+            <h3>Join a Session</h3>
+            <p>Enter the <strong style="color:var(--accent)">5-digit code</strong> your teacher displayed, or scan the QR code to submit doubts completely anonymously.</p>
+          </div>
+          <div class="digit-label">Session Code</div>
+          <div class="code-digit-group" id="digit-group">
+            <input class="code-digit" id="d0" maxlength="1" type="text" inputmode="numeric" autocomplete="off" oninput="dIn(this,0)" onkeydown="dKey(event,0)"/>
+            <input class="code-digit" id="d1" maxlength="1" type="text" inputmode="numeric" autocomplete="off" oninput="dIn(this,1)" onkeydown="dKey(event,1)"/>
+            <input class="code-digit" id="d2" maxlength="1" type="text" inputmode="numeric" autocomplete="off" oninput="dIn(this,2)" onkeydown="dKey(event,2)"/>
+            <input class="code-digit" id="d3" maxlength="1" type="text" inputmode="numeric" autocomplete="off" oninput="dIn(this,3)" onkeydown="dKey(event,3)"/>
+            <input class="code-digit" id="d4" maxlength="1" type="text" inputmode="numeric" autocomplete="off" oninput="dIn(this,4)" onkeydown="dKey(event,4)"/>
+          </div>
+          <div class="gate-error" id="gate-err">❌ Invalid code. Ask your teacher for the correct session code.</div>
+          <button class="btn-join" id="btn-join" onclick="sJoin()" disabled>Join Session →</button>
+          <div class="gate-divider">or scan QR</div>
+          <div class="qr-notice">
+            <div class="qi">📷</div>
+            <p>Use your phone camera or any QR scanner app to scan the QR the teacher displays. It will <strong>automatically fill in the code</strong> and join instantly — no typing needed.</p>
+          </div>
+        </div>
+        <!-- Doubt form: shown after joining -->
+        <div id="s-form" style="display:none" class="student-form-box">
+          <div class="joined-banner">
+            <div class="jb-icon">✅</div>
+            <div class="jb-text">
+              <strong>Session Joined — Code <span id="joined-code">-----</span></strong>
+              <span>Your identity is completely hidden from everyone, including the teacher.</span>
+            </div>
+          </div>
+          <div class="anon-notice">
+            <span>🔒</span>
+            <p>You are 100% anonymous. No name, no ID, no trace. Ask anything freely.</p>
+          </div>
+          <div class="form-field">
+            <label>Your Doubt *</label>
+            <textarea id="s-doubt" placeholder="e.g. Can you explain gradient descent with a simple analogy?" maxlength="500" oninput="updateChar()"></textarea>
+          </div>
+          <div class="char-bar-wrap">
+            <div class="char-bar-bg"><div class="char-bar-fill" id="char-fill" style="width:0%"></div></div>
+            <span class="char-lbl" id="char-lbl">0 / 500</span>
+          </div>
+          <div class="form-row">
+            <div class="form-field" style="margin:0">
+              <label>Category</label>
+              <select id="s-cat">
+                <option value="concept">📘 Concept Doubt</option>
+                <option value="exam">📝 Exam Related</option>
+                <option value="assignment">📌 Assignment</option>
+                <option value="general">💬 General</option>
+              </select>
+            </div>
+            <div class="form-field" style="margin:0">
+              <label>Subject</label>
+              <select id="s-subj">
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Deep Learning">Deep Learning</option>
+                <option value="Data Structures">Data Structures</option>
+                <option value="Python">Python</option>
+                <option value="General">General</option>
+              </select>
+            </div>
+          </div>
+          <button class="submit-btn" id="s-btn" onclick="sSubmit()">
+            <span id="s-btn-txt">Submit Anonymously →</span>
+            <div class="spinner" id="s-spin"></div>
+          </button>
+          <div class="success-flash" id="s-ok"><p>✅ Doubt submitted anonymously! The teacher will answer soon.</p></div>
+          <button class="btn-leave" onclick="sLeave()">← Leave Session</button>
+          <div class="my-doubts-box">
+            <div class="my-doubts-label">Your Submitted Doubts This Session</div>
+            <div id="my-list"><div class="empty-state"><div class="ei">📭</div><p>No doubts submitted yet</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- RESULTS -->
+<section class="page-section" id="results">
+  <div class="reveal">
+    <div class="sec-tag">Chapter 7 · Test Phase Results</div>
+    <h2 class="sec-h">The Impact Was<br>Measurable &amp; Real</h2>
+    <p class="sec-sub">Testing across multiple classroom scenarios produced clear, significant improvements in student participation and teaching effectiveness.</p>
+  </div>
+  <div class="res-grid">
+    <div class="res-card reveal"><span class="res-icon">📈</span><h3>4× More Questions</h3><p>Question volume increased 4x during live lectures compared to traditional verbal methods.</p></div>
+    <div class="res-card reveal"><span class="res-icon">🙋</span><h3>Silent Students Spoke</h3><p>Introverted and shy students participated actively for the first time. Anonymity was the key.</p></div>
+    <div class="res-card reveal"><span class="res-icon">🎯</span><h3>Better Teaching</h3><p>Teachers identified recurring misconceptions and adjusted their lectures in real time.</p></div>
+    <div class="res-card reveal"><span class="res-icon">💬</span><h3>Deeper Doubts</h3><p>Post-lecture submissions showed more conceptual, thoughtful questions vs basic clarifications.</p></div>
+  </div>
+  <div class="quote-box reveal">
+    <p>"I finally asked what I always wanted to." &nbsp;·&nbsp; "I don't feel judged now." &nbsp;·&nbsp; "I understood better because many had the same doubt." &nbsp;·&nbsp; "This changes how I teach."</p>
+    <cite>— Student &amp; Teacher Feedback, Test Phase 2025–26</cite>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FUTURE -->
+<section class="page-section" id="future">
+  <div class="reveal">
+    <div class="sec-tag">Chapter 11 · Future Scope</div>
+    <h2 class="sec-h">What Comes Next</h2>
+    <p class="sec-sub">These enhancements will evolve it into a comprehensive, intelligent educational platform.</p>
+  </div>
+  <div class="future-grid">
+    <div class="fut-item reveal"><div class="fut-dot"></div><div><h4>AI-Assisted Resolution</h4><p>Chatbots and ML models to auto-answer FAQs, reducing teacher workload.</p></div></div>
+    <div class="fut-item reveal"><div class="fut-dot"></div><div><h4>Voice-Based Input</h4><p>Students speak their doubts — more accessible for all learners.</p></div></div>
+    <div class="fut-item reveal"><div class="fut-dot"></div><div><h4>Advanced Analytics</h4><p>Topic-wise confusion trends, participation graphs, performance insights.</p></div></div>
+    <div class="fut-item reveal"><div class="fut-dot"></div><div><h4>LMS Integration</h4><p>Sync with existing platforms like Moodle or university portals.</p></div></div>
+    <div class="fut-item reveal"><div class="fut-dot"></div><div><h4>Gamification</h4><p>Reward points and badges to keep students engaged without breaking anonymity.</p></div></div>
+    <div class="fut-item reveal"><div class="fut-dot"></div><div><h4>Mobile Application</h4><p>Dedicated app with push notifications and personalized experience.</p></div></div>
+    <div class="fut-item reveal"><div class="fut-dot"></div><div><h4>Offline Mode</h4><p>SMS-based submissions for low-connectivity environments.</p></div></div>
+    <div class="fut-item reveal"><div class="fut-dot"></div><div><h4>Institutional Scale</h4><p>From classroom to department to university-wide deployment.</p></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TEAM -->
+<section class="page-section" id="team">
+  <div class="reveal">
+    <div class="sec-tag">Project Team · VVIT Nambur · JNTUK 2025–26</div>
+    <h2 class="sec-h">Built By</h2>
+    <p class="sec-sub">B.Tech CSE–Artificial Intelligence &amp; Machine Learning students under expert guidance.</p>
+  </div>
+  <div class="team-grid">
+    <div class="tm-card reveal"><div class="tm-av" style="background:linear-gradient(135deg,#818cf8,#34d399)">SA</div><h4>S. Sai Avinash Reddy</h4><span class="tm-role">Member</span><div class="tm-id">24BQ1A42W4</div></div>
+  </div>
+  <div class="guide-box reveal">
+    <div class="guide-item"><div class="g-lbl" style="color:var(--accent)">Project Guide</div><div class="g-name">Dr. K. Gnanendra</div><div class="g-role">Assistant Professor, Dept. of CSE–AIML</div></div>
+    <div class="guide-item"><div class="g-lbl" style="color:var(--accent2)">Head of Department</div><div class="g-name">Dr. G. Sanjay Gandhi</div><div class="g-role">HOD, CSE–Artificial Intelligence &amp; Machine Learning</div></div>
+    <div class="guide-item"><div class="g-lbl" style="color:var(--accent3)">Institution</div><div class="g-name">VVIT Nambur</div><div class="g-role">Vasireddy Venkatadri Institute of Technology · Affiliated to JNTUK</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-logo">QR Anonymous Doubt System</div>
+    <p>Design Thinking &amp; Innovation · CSE–AIML Department · VVIT Nambur · JNTUK · Academic Year 2025–26</p>
+    <p>Guided by Dr. K. Gnanendra · HOD Dr. G. Sanjay Gandhi</p>
+    <div class="foot-quote">"Done By Sollapur. Sai Avinash Reddy 24BQ1A42W4@vvit.net"</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
